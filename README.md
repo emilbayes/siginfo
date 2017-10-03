@@ -4,7 +4,7 @@
 
 > Utility module to print pretty messages on SIGINFO/SIGUSR1
 
-`SIGINFO` on BSD / macOS and `USRSIG1` on Linux, usually triggered by
+`SIGINFO` on BSD / macOS and `SIGUSR1` on Linux, usually triggered by
 `Ctrl + T`, are by convention used to print information about
 a long running process internal state. Eg. `dd` will tell you how many blocks it
 has written and at what speed, while `xz` will tell you progress, compression
