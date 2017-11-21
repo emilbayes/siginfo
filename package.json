@@ -3,10 +3,10 @@
   "version": "1.0.1",
   "description": "Utility module to print pretty messages on SIGINFO/SIGUSR1",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "standard": "^10.0.3"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "standard"
   },
