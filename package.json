@@ -1,6 +1,6 @@
 {
   "name": "siginfo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility module to print pretty messages on SIGINFO/SIGUSR1",
   "main": "index.js",
   "dependencies": {},
