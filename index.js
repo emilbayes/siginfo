@@ -1,8 +1,6 @@
-var util = require('util')
-
-module.exports = function (query) {
+module.exports = function (query, force) {
   var isAttached = false
-  if (process.stderr.isTTY) {
+  if (process.stderr.isTTY || force === true) {
     isAttached = true
     process.on('SIGINFO', onsiginfo)
     process.on('SIGUSR1', onsiginfo)
@@ -17,9 +15,6 @@ module.exports = function (query) {
   }
 
   function onsiginfo () {
-    var info = query()
-    process.stderr.write(typeof info === 'string' ? info : util.inspect(info, {
-      colors: true
-    }) + '\n')
+    query()
   }
 }

@@ -11,7 +11,7 @@ has written and at what speed, while `xz` will tell you progress, compression
 ratio and estimated time remaining.
 
 This module wraps both signals, checks if the process is connected to TTY and
-writes to `stderr` on each intercepted signal.
+lets you do whatever you want.
 
 ## Usage
 
@@ -20,19 +20,21 @@ var siginfo = require('siginfo')
 var pkg = require('./package.json')
 
 siginfo(function () {
-  return {
+  console.dir({
     version: pkg.version,
     uptime: process.uptime()
-  }
+  })
 })
 
 ```
 
 ## API
 
-### `var removeListener = siginfo(queryFn)`
+### `var removeListener = siginfo(queryFn, [force])`
 
-`queryFn` should return a info string or an object.
+`queryFn` can be used for whatever you want (logging, sending a UDP message, etc.).
+Setting `force = true` will attach the event handlers whether a TTY is present
+or not.
 
 ## Install
 

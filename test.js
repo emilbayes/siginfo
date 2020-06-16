@@ -2,10 +2,10 @@ var siginfo = require('.')
 var pkg = require('./package.json')
 
 var stop = siginfo(function () {
-  return {
+  console.dir({
     version: pkg.version,
     uptime: process.uptime()
-  }
+  })
 })
 
 process.stdout.resume()
